@@ -1,0 +1,25 @@
+/* Apply Rockwell font */
+body {
+    font-family: 'Rockwell', serif;
+}
+
+/* Navbar Hover Effect */
+.navbar-nav .nav-link:hover {
+    color: #FFB200 !important;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero-section {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}

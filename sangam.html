@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangam Club - FestaSphere</title>
+    <link rel="icon" type="image/jpeg" href="icon.jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #4285F4;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: white;
+            border: 5px solid white;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #4285F4;
+        }
+        
+        .club-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .club-tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .club-description {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .description-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #4285F4;
+            font-weight: 600;
+        }
+        
+        .description-text {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        .content-split {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .left-section {
+            flex: 0.6;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .right-section {
+            flex: 0.4;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #4285F4;
+            font-weight: 600;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .event-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4285F4;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-date {
+            font-size: 0.9rem;
+            color: #4285F4;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .event-description {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .explore-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .explore-btn:hover {
+            background-color: #3367d6;
+        }
+        
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #4285F4;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .social-link:hover {
+            background-color: #4285F4;
+            color: white;
+        }
+        
+        .team-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: #4285F4;
+        }
+        
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .member-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .member-info h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .member-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 900px) {
+            .content-split {
+                flex-direction: column;
+            }
+            
+            .left-section, .right-section {
+                flex: 1;
+                width: 100%;
+            }
+            
+            .club-name {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Profile Image -->
+    <header class="header" style="background-image:url('gdsc-1.jpg')">
+        <div class="header-content">
+            <div class="profile-image">
+                Sangam
+            </div>
+            <h1 class="club-name">Sangam Club</h1>
+            <p class="club-tagline">Music | Dance  | Art</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Club Description Section -->
+        <div class="club-description">
+            <h2 class="description-title">About Sangam</h2>
+            <p class="description-text">Google Developer Student Clubs (GDSC) is a community of students passionate about Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome to join.</p>
+            <p class="description-text">Our GDSC chapter aims to help students bridge the gap between theory and practice by providing workshops, events, and project opportunities in various domains such as mobile development, web development, cloud computing, machine learning, and more.</p>
+            <p class="description-text">By joining GDSC, members get access to Google Developer resources, workshops led by experts, peer-to-peer learning opportunities, and the chance to work on projects with real-world impact. We believe in fostering an inclusive environment where students can grow their knowledge in a peer-to-peer learning setting and build solutions for local businesses and their community.</p>
+        </div>
+        
+        <!-- Content Split: 60% left, 40% right -->
+        <div class="content-split">
+            <!-- Left Section: Upcoming Events (60%) -->
+            <div class="left-section">
+                <h2 class="section-title">Upcoming Events</h2>
+                
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-date">MAR 15, 2025 • 10:00 AM</div>
+                    <h3 class="event-title">ance practice</h3>
+                    <p class="event-description">Join us for a hands-on workshop on Flutter, Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-date">MAR 20, 2025 • 4:00 PM</div>
+                    <h3 class="event-title">Flashmob</h3>
+                    <p class="event-description">Get started with machine learning using TensorFlow. This study jam will cover the basics and provide hands-on experience with real datasets.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-date">APR 02, 2025 • 5:30 PM</div>
+                    <h3 class="event-title">Cloud Computing with Google Cloud</h3>
+                    <p class="event-description">Learn how to deploy applications on Google Cloud Platform and understand cloud architecture fundamentals.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 4 -->
+                <div class="event-card">
+                    <div class="event-date">APR 10, 2025 • 2:00 PM</div>
+                    <h3 class="event-title">Web Development Bootcamp</h3>
+                    <p class="event-description">A comprehensive bootcamp covering HTML, CSS, JavaScript, and modern frameworks to build responsive and dynamic websites.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 5 -->
+                <div class="event-card">
+                    <div class="event-date">APR 18, 2025 • 11:00 AM</div>
+                    <h3 class="event-title">Android App Development Workshop</h3>
+                    <p class="event-description">Learn to build your first Android application using Kotlin and Android Studio. Perfect for beginners!</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 6 -->
+                <div class="event-card">
+                    <div class="event-date">MAY 05, 2025 • 3:00 PM</div>
+                    <h3 class="event-title">Tech Talk: AI Ethics</h3>
+                    <p class="event-description">Join our discussion on ethical considerations in artificial intelligence and how developers can build responsible AI systems.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 7 -->
+                <div class="event-card">
+                    <div class="event-date">MAY 12, 2025 • 6:00 PM</div>
+                    <h3 class="event-title">Solution Challenge Hackathon</h3>
+                    <p class="event-description">Put your skills to the test! Join our hackathon to solve real-world problems using Google technologies.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 8 -->
+                <div class="event-card">
+                    <div class="event-date">MAY 25, 2025 • 1:00 PM</div>
+                    <h3 class="event-title">Firebase for Beginners</h3>
+                    <p class="event-description">Learn how to integrate Firebase into your applications for authentication, database, and hosting needs.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+            </div>
+            
+            <!-- Right Section: Contact Info & Team (40%) -->
+            <div class="right-section">
+                <h2 class="section-title">Connect With Us</h2>
+                
+                <!-- Contact Information -->
+                <div class="contact-item">
+                    <div class="contact-icon">E</div>
+                    <div>gdsc@university.edu</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">L</div>
+                    <div>Tech Building, Room 201, University Campus</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">M</div>
+                    <div>Meetings: Every Wednesday at 5:00 PM</div>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="#" class="social-link">G</a>
+                    <a href="#" class="social-link">F</a>
+                    <a href="#" class="social-link">I</a>
+                    <a href="#" class="social-link">L</a>
+                    <a href="#" class="social-link">T</a>
+                </div>
+                
+                <!-- Team Section -->
+                <h3 class="team-title">Our Team</h3>
+                
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-avatar">JD</div>
+                    <div class="member-info">
+                        <h4>Jane Doe</h4>
+                        <p>GDSC Lead</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-avatar">JS</div>
+                    <div class="member-info">
+                        <h4>John Smith</h4>
+                        <p>Technical Lead</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-avatar">AK</div>
+                    <div class="member-info">
+                        <h4>Alex Kim</h4>
+                        <p>Event Coordinator</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-avatar">MP</div>
+                    <div class="member-info">
+                        <h4>Maria Patel</h4>
+                        <p>Design Lead</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="member-avatar">RJ</div>
+                    <div class="member-info">
+                        <h4>Ryan Johnson</h4>
+                        <p>Content Creator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

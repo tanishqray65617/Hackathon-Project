@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - FestaSphere</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jpeg" href="icon.jpg">
+    <style>
+        .container {
+            max-width: 400px;
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            padding: 12px;
+            font-size: 16px;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        input::placeholder {
+            font-size: 14px;
+        }
+        .btn-dark {
+            padding: 12px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Student Login</h2>
+        <form action="login.php" method="POST">
+    <div class="mb-3">
+        <label for="sap" class="form-label">SAP Number</label>
+        <input type="text" class="form-control" name="sap" placeholder="SAP Number" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+    </div>
+    <button type="submit" class="btn btn-dark w-100">Login</button>
+</form>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
